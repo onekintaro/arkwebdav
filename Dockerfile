@@ -13,6 +13,10 @@ RUN         dpkg --add-architecture i386 \
             && apt-get upgrade -y \
             && apt-get install -y tar curl gcc g++ lib32gcc1 lib32tinfo5 lib32z1 lib32stdc++6 libtinfo5:i386 libncurses5:i386 libcurl3-gnutls:i386 iproute2 gdb libsdl1.2debian libfontconfig \
             && useradd -m -d /home/container container
+RUN curl -sSL -o rcon.c https://www.ryanschulze.net/files/rcon.c
+RUN gcc rcon.c -o rcon
+RUN chmod ugo+rx rcon
+RUN mv rcon /usr/bin
 
 USER        container
 ENV         HOME /home/container

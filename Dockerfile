@@ -5,7 +5,7 @@
 # ----------------------------------
 FROM        ubuntu:16.04
 
-MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
+MAINTAINER  Onekintaro, <info@swisscrafting.ch>
 ENV         DEBIAN_FRONTEND noninteractive
 # Install Dependencies
 RUN         dpkg --add-architecture i386 \
